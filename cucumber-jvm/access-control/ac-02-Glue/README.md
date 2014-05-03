@@ -1,7 +1,7 @@
-access-control-2
-================
+ac-02-Glue
+==========
 
-This is the second of the access-control cucumber-jvm example series.
+This is the second part of the access-control cucumber-jvm example series.
 
 # test - Test folder
 The test folder is now updated with empty step definitions
