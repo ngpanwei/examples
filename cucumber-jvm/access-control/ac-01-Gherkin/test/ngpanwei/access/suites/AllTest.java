@@ -33,5 +33,4 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({ UserAdminTests.class, UserAdminTestsZh.class })
 public class AllTest {
-
 }

@@ -54,4 +54,39 @@ This is where the test code goes.
 * suites - this folder contains suite codes to aggregate the test code to execute.
   * AllTest.java - runs both UserAdminTests.java and UserAdminTestsZh.java
 
+UserAdminTests.java
+````java
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		monochrome = true, 
+		// dryRun = true, 
+		features = "req/ngpanwei/access/features/admin" ,
+		tags = { "~@Undefined"  } 
+		)
+public class UserAdminTests {
+}
+````
+
+UserAdminTestsZh.java
+````java
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		monochrome = true, 
+		// dryRun = true, 
+		features = "req/ngpanwei/access/featuresZh" ,
+		tags = { "~@Undefined"  } 
+		)
+public class UserAdminTestsZh {
+}
+````
+
+AllTest.java
+````java
+@RunWith(Suite.class)
+@SuiteClasses({ UserAdminTests.class, UserAdminTestsZh.class })
+public class AllTest {
+}
+````
+
+
 
