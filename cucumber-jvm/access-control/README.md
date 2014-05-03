@@ -11,4 +11,4 @@ This is a set of examples to walkthrough the use of cucumber-jvm step-by-step us
 * ac-06-Pass-Test-A - Implement source code API to pass first step of acceptance test.
 * ac-07-Pass-Test-B - Implement source code API to pass second step of acceptance test.
 * ac-08-Pass-Test-C - Implement source code API to pass third and fourth step of acceptance test.
-* ac-09-Refector - Refactor source code to improve logical separation
+* ac-09-Refactor - Refactor source code to improve logical separation
