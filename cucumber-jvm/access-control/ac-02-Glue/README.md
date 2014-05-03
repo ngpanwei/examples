@@ -13,3 +13,29 @@ The test folder is now updated with empty step definitions
 ** UserAdminTests.java - this is updated to glue the step definition codes.
 ** UserAdminTestsZh.java - this is updated to glue the step definition codes.
 
+The "glue" option tells cucumber-jvm where to find the code that maps to the Gherkin steps.
+UserAdminTests.java
+````java
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		monochrome = true, 
+		features = "req/ngpanwei/access/features/admin" ,
+		glue = "ngpanwei.access.stepdefs.admin" ,
+		tags = { "~@Undefined"  } 
+		)
+public class UserAdminTests {
+}
+````
+
+UserAdminTestsZh.java
+````java
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		monochrome = true, 
+		features = "req/ngpanwei/access/featuresZh" ,
+		glue = "ngpanwei.access.stepdefsZh" ,
+		tags = { "~@Undefined"  } 
+		)
+public class UserAdminTestsZh {
+}
+````

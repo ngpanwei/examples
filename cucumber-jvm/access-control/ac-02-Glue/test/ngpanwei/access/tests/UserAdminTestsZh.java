@@ -31,11 +31,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		monochrome = true, 
-		// dryRun = true, 
 		features = "req/ngpanwei/access/featuresZh" ,
 		glue = "ngpanwei.access.stepdefsZh" ,
 		tags = { "~@Undefined"  } 
 		)
 public class UserAdminTestsZh {
-
 }
