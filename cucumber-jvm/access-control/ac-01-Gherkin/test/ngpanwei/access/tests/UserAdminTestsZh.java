@@ -36,5 +36,4 @@ import cucumber.api.junit.Cucumber;
 		tags = { "~@Undefined"  } 
 		)
 public class UserAdminTestsZh {
-
 }

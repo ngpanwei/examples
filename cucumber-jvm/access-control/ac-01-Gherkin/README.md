@@ -49,10 +49,10 @@ True to Behavior Driven Development, we start off without any code.
 # test - Test folder
 This is where the test code goes. 
 * tests - this folder contains test code to execute the requirements via cucumber-jvm
-  * UserAdminTests.java - executes the user-admin.feature file
-  * UserAdminTestsZh.java - executes the user-admin-zh.feature file
+  * UserAdminTests.java - executes the user-admin.feature file through jUnit
+  * UserAdminTestsZh.java - executes the user-admin-zh.feature file through jUnit
 * suites - this folder contains suite codes to aggregate the test code to execute.
-  * AllTest.java - runs both UserAdminTests.java and UserAdminTestsZh.java
+  * AllTest.java - runs both UserAdminTests.java and UserAdminTestsZh.java as a suite through jUnit
 
 UserAdminTests.java
 ````java
