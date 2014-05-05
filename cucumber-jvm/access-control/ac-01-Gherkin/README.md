@@ -59,7 +59,6 @@ UserAdminTests.java
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		monochrome = true, 
-		// dryRun = true, 
 		features = "req/ngpanwei/access/features/admin" ,
 		tags = { "~@Undefined"  } 
 		)
@@ -72,7 +71,6 @@ UserAdminTestsZh.java
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		monochrome = true, 
-		// dryRun = true, 
 		features = "req/ngpanwei/access/featuresZh" ,
 		tags = { "~@Undefined"  } 
 		)
