@@ -23,13 +23,35 @@
 # 
 # encoding:utf-8
 
-Feature: Account Management
-	In order to add new users easily
+Feature: Create Account
+	In order to protect the system from unauthorized access
 	As an administrator
-	I want to add single or multiple users in one single step 
+	I want to create accounts for authorized users
+	- considerations
+	  - duplicate accounts
+	  - batch creation
 
-Scenario: Add a single user
-	Given the administrator creates account with name "abc" and email "abc@abc.com"
+Scenario: Create a new user account
+	Given the administrator has created account with name "abc" and email "abc@abc.com"
 	Given the user "abc" sets the password to "abc-password"
-	When the user "abc" logs on to the system
-	Then the system grants access to the user
+	Then the user "def" cannot login with password "xxx"
+	Then the user "abc" cannot login with password "xxx"
+	Then the user "abc" can login with password "abc-password"
+
+Scenario: Create a duplicate account fails
+	Given the administrator has created account with name "abc" and email "abc@abc.com"
+	When the administrator creates account with name "abc" and email "abc@abc.com"
+	Then no new account is created
+
+Scenario: Create multiple accounts
+	Given the administrator has created account with name "abc" and email "abc@abc.com"
+	When the administrator creates accounts names and emails:
+		| def | def@def.com |
+		| hij | hij@hij.com |
+	When the users set the following passwords:
+		| abc | abc-password |
+		| def | def-password |
+		| hij | hij-password |
+	Then the user "abc" cannot login with password "xxx"
+	Then the user "def" can login with password "def-password"
+	

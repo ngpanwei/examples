@@ -23,12 +23,12 @@
 # 
 # encoding:utf-8
 
-Feature: Account Management
-	In order to add new users easily
+Feature: Create Account
+	In order to protect the system from unauthorized access
 	As an administrator
-	I want to add single or multiple users in one single step 
+	I want to create accounts for authorized users
 
-Scenario: Add a single user
+Scenario: Create account for a user
 	Given the administrator creates account with name "abc" and email "abc@abc.com"
 	Given the user "abc" sets the password to "abc-password"
 	When the user "abc" logs on to the system
