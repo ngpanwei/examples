@@ -1,5 +1,5 @@
-access-control-9
-================
+ac-09-Refactor
+==============
 
 This is the ninth part of the access-control cucumber-jvm example series.
 

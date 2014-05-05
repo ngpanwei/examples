@@ -34,9 +34,9 @@ Feature: Create Account
 Scenario: Create a new user account
 	Given the administrator has created account with name "abc" and email "abc@abc.com"
 	Given the user "abc" sets the password to "abc-password"
-	Then the user "def" cannot login with password "xxx"
-	Then the user "abc" cannot login with password "xxx"
-	Then the user "abc" can login with password "abc-password"
+	Then the user "def" "cannot" login with password "xxx"
+	Then the user "abc" "cannot" login with password "xxx"
+	Then the user "abc" "can" login with password "abc-password"
 
 Scenario: Create a duplicate account fails
 	Given the administrator has created account with name "abc" and email "abc@abc.com"
@@ -52,6 +52,6 @@ Scenario: Create multiple accounts
 		| abc | abc-password |
 		| def | def-password |
 		| hij | hij-password |
-	Then the user "abc" cannot login with password "xxx"
-	Then the user "def" can login with password "def-password"
+	Then the user "abc" "cannot" login with password "xxx"
+	Then the user "def" "can" login with password "def-password"
 	
