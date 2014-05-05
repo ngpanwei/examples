@@ -29,9 +29,30 @@
 ［为了］保护系统免受未经授权的访问
 ［作为］管理员
 ［我要］创建帐户给授权的用户
+ － 考虑
+    － 重复用户账户
+    － 批量创建账户
 
 场景: 给用户创建帐户
-    假如 管理员新增用户 "abc" 邮箱 "abc@abc.com"
+    假如 管理员已经创建用户 "abc" 邮箱 "abc@abc.com"
     假如 用户 "abc" 把密码设为 "abc-password"
-    当   用户 "abc" 登入
-    那么 系统给用户建立一个会期
+    那么 用户 "def" "不可以" 采用密码 "xxx" 登入
+    那么 用户 "abc" "不可以" 采用密码 "xxx" 登入
+    那么 用户 "abc" "可以" 采用密码 "abc-password" 登入
+    
+场景: 不允许创建重复账户
+    假如 管理员已经创建用户 "abc" 邮箱 "abc@abc.com"
+    那么 管理员 "不可以" 创建用户 "abc" 邮箱 "abc@abc.com"
+    那么 管理员 "可以" 创建用户 "def" 邮箱 "def@def.com"
+    
+场景: 批量创建账户
+    假如 管理员已经创建用户 "abc" 邮箱 "abc@abc.com"
+    当   管理员批量创建以下账户:    
+		| def | def@def.com |
+		| hij | hij@hij.com |
+    当   用户设定以下密码:    
+		| abc | abc-password |
+		| def | def-password |
+		| hij | hij-password |
+    那么 用户 "abc" "不可以" 采用密码 "xxx" 登入
+    那么 用户 "def" "可以" 采用密码 "def-password" 登入

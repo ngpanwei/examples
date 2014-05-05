@@ -40,12 +40,12 @@ Scenario: Create a new user account
 
 Scenario: Create a duplicate account fails
 	Given the administrator has created account with name "abc" and email "abc@abc.com"
-	When the administrator creates account with name "abc" and email "abc@abc.com"
-	Then no new account is created
+	Then the administrator "cannot" create account with name "abc" and email "abc@abc.com"
+	Then the administrator "can" create account with name "def" and email "def@def.com"
 
-Scenario: Create multiple accounts
+Scenario: Create accounts in a batch
 	Given the administrator has created account with name "abc" and email "abc@abc.com"
-	When the administrator creates accounts names and emails:
+	When the administrator creates a batch of accounts names and emails:
 		| def | def@def.com |
 		| hij | hij@hij.com |
 	When the users set the following passwords:
