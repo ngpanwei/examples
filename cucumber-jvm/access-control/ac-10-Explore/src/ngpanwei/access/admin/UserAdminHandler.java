@@ -23,6 +23,9 @@
  */
 package ngpanwei.access.admin;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ngpanwei.fw.AppException;
 import ngpanwei.fw.HashMapUtil;
 import ngpanwei.fw.ObjectFactory;
@@ -38,6 +41,18 @@ public class UserAdminHandler implements IUserAdminHandler {
 		UserAccount account = userDataAccess.createUser(userInfo) ;
 		return account;
 	}
+	@Override
+	public List<UserAccount> createUsers(List<UserInfo> userInfoList) 
+			throws AppException {
+		List<UserAccount> accounts = new ArrayList<UserAccount>() ;
+		IUserDataAccess userDataAccess = getUserDataAccess();
+		for(UserInfo userInfo : userInfoList) {
+			UserAccount account = userDataAccess.createUser(userInfo) ;
+			accounts.add(account) ;
+		}
+		return accounts ;
+	}
+	
 	@Override
 	public UserAccount changePassword(UserInfo userInfo) throws AppException {
 		IUserDataAccess userDataAccess = getUserDataAccess();

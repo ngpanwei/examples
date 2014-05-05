@@ -32,6 +32,9 @@ public class AppException extends Exception {
 	public AppException() {
 		super() ;
 	}
+	public AppException(Exception e) {
+		super(e) ;
+	}
 	public AppException(String message) {
 		super(message) ;
 	}

@@ -23,6 +23,8 @@
  */
 package ngpanwei.access.admin;
 
+import java.util.List;
+
 import ngpanwei.fw.AppException;
 
 /**
@@ -31,6 +33,8 @@ import ngpanwei.fw.AppException;
  */
 public interface IUserAdminHandler {
 	public UserAccount createUser(UserInfo userInfo) 
+			throws AppException ;
+	public List<UserAccount> createUsers(List<UserInfo> userInfoList) 
 			throws AppException ;
 	public UserAccount changePassword(UserInfo userInfo) 
 			throws AppException ;

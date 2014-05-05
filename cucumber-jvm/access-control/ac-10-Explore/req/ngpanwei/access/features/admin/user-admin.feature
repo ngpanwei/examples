@@ -30,7 +30,7 @@ Feature: Create Account
 	- considerations
 	  - duplicate accounts
 	  - batch creation
-
+	  
 Scenario: Create a new user account
 	Given the administrator has created account with name "abc" and email "abc@abc.com"
 	Given the user "abc" sets the password to "abc-password"
