@@ -34,7 +34,6 @@ import ngpanwei.access.session.Session;
 import ngpanwei.access.session.SessionHandler;
 import ngpanwei.framework.context.TestExecutionContext;
 import ngpanwei.framework.intention.Intention;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.zh_cn.假如;
 import cucumber.api.java.zh_cn.当;
