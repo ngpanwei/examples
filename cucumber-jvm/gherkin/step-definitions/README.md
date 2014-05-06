@@ -4,6 +4,7 @@ cucumber-jvm Step-Definitions
 This project provides examples on how to create different 
 kinds of step definitions using cucumber-jvm.
 It expands on the examples in [cucumber step-definitions](http://cukes.info/step-definitions.html)
+You ought to get up to speed quickly with [regular expressions](http://www.agileforall.com/2011/08/cucumber-regular-expressions-cheat-sheet/)
 
 make-reservation.feature
 ```
