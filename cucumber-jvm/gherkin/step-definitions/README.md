@@ -1,5 +1,5 @@
-Step-Definitions
-================
+cucumber-jvm Step-Definitions
+=============================
 
 This project provides examples on how to create different 
 kinds of step definitions using cucumber-jvm.
@@ -32,4 +32,82 @@ Scenario: Make Reservation
 	Then the reservation is successful
 ````
 
+The first step definition is implemented as:
+````java
+	@Given("^that the hotel has the following rooms:$")
+	public void that_the_hotel_has_the_following_rooms(List<RoomDef> roomList)
+			throws Throwable {
+		// ...
+	}
+```
+
+The second step definition is implemented as:
+````java
+	@Given("^that the hotel has the following reservations:$")
+	public void that_the_hotel_has_the_following_reservations(
+			List<ReservationDef> reservationList) throws Throwable {
+		// ...
+	}
+````
+Note that the ReservationDef class has a custom converter.
+````java
+public class ReservationDef {
+	@XStreamConverter(Converter.DateConverter.class)
+	Date checkIn;
+	@XStreamConverter(Converter.DateConverter.class)
+	Date checkOut;
+	String type;
+}
+````
+The custom formatter is implemented as:
+````java
+public class Converter {
+	public static final SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy") ;
+	
+	public static String dateString(Date date) {
+		return format.format(date) ;
+	}
+	public static class DateConverter extends Transformer<Date> {
+		@Override
+		public Date transform(String value) {
+			Date date = null ;
+			try {
+				date = format.parse(value) ;
+			} catch (ParseException ignore) {
+			}		
+			return date;
+		}
+	}
+}
+````
+The next step definition uses an argument not encapsulated with quotes
+````java
+	@When("^a guest wants to find an available ([^ ]*) room$")
+	public void a_guest_wants_to_find_available_room(String type) throws Throwable {
+		// ...
+	}
+````
+You can use two ways to extract dates
+````java
+	@When("^the reservation is from (\\d+-\\d+-\\d+) to (\\d+-\\d+-\\d+)$")
+	public void the_reservation_is_from_to(@Format("dd-MM-yyyy") Date checkIn, 
+			@Transform(Converter.DateConverter.class) Date checkOut) throws Throwable {
+		System.err.println("Check In  : "+Converter.dateString(checkIn)) ;
+		System.err.println("Check Out : "+Converter.dateString(checkOut)) ;
+	}
+````
+Of course, you can have multi-line text like normal text
+````java
+	@When("^the special requirements are$")
+	public void the_special_requirements_are(String specialRequirements) throws Throwable {
+		// ...
+	}	
+````
+You can have options declared:
+````java
+	@Then("^the reservation is (successful|unsuccessful)$")
+	public void the_reservation_is(String expectedResult) throws Throwable {
+		// ...
+	}
+````
 
