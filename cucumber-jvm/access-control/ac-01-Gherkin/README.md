@@ -85,6 +85,9 @@ AllTest.java
 public class AllTest {
 }
 ````
-
+### Notes
+To get a richer example on how to express features using Gherkin,
+please look at [Part 10 of this tutorial](https://github.com/ngpanwei/examples/tree/master/cucumber-jvm/access-control/ac-10-Explore) 
+or [step-definitions](https://github.com/ngpanwei/examples/tree/master/cucumber-jvm/gherkin/step-definitions)  
 
 
