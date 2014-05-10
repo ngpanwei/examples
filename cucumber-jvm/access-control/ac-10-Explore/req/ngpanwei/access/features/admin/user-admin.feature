@@ -27,11 +27,14 @@ Feature: Create Account
 	In order to protect the system from unauthorized access
 	As an administrator
 	I want to create accounts for authorized users
-	- considerations
-	  - duplicate accounts
-	  - batch creation
+	
+	Acceptance criteria 
+	  - authorized users must login successfully
+	  - handle duplicate accounts
+	  - handle batch processing
 	  
-Scenario: Create a new user account
+Scenario: Create a new user account successfully
+Some words
 	Given the administrator has created account with name "abc" and email "abc@abc.com"
 	Given the user "abc" sets the password to "abc-password"
 	Then the user "def" "cannot" login with password "xxx"
