@@ -25,7 +25,7 @@ package ngpanwei.access.stepdefs.admin;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +41,6 @@ import ngpanwei.fw.AppException;
 import ngpanwei.fw.ObjectFactory;
 import ngpanwei.fw.session.ISessionHandler;
 import ngpanwei.fw.session.Session;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
